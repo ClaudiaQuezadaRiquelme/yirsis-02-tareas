@@ -9,9 +9,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let elem of tareas">
           <th>1</th>
-          <td><b>Barrer</b></td>
+          <td><b>{{elem}}</b></td>
           <td><button class="button is-link">Completar</button></td>
           <td><button class="button is-danger">Eliminar</button></td>
         </tr>

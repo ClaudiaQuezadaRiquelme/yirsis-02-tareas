@@ -6,12 +6,7 @@ export class TareasService {
         'Barrer', 'Trapear', 'Cocinar', 'Leer'
     ];
 
-    delete(value: string): void {
-        for (let i = 0; i < this.tareas.length; i++) {
-            const elem = this.tareas[i];
-            if (elem.localeCompare(value) === 0) {
-                this.tareas.splice(i, 1);
-            }
-        }
+    delete(index: number): void {
+        this.tareas.splice(index, 1);
     }
 }

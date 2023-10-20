@@ -16,7 +16,7 @@ export class ListadoTareasComponent {
     return this.tareasService.tareas;
   }
 
-  tareasDelete(value: string): void {
-    return this.tareasService.delete(value);
+  tareasDelete(index: number): void {
+    return this.tareasService.delete(index);
   }
 }

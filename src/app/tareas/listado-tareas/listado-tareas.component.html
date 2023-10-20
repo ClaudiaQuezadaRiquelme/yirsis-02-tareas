@@ -4,6 +4,7 @@
         <tr>
           <th>ID</th>
           <th>Actividad</th>
+          <th> </th>
           <th>Completar</th>
           <th>Eliminar</th>
         </tr>
@@ -12,6 +13,18 @@
         <tr *ngFor="let elem of tareas; index as i;">
           <th>{{i+1}}</th>
           <td><b>{{elem.tarea}}</b></td>
+          <th>
+            <ng-container *ngIf="elem.completada; else noCompletada;">
+              <span class="material-symbols-outlined">
+                done_outline
+              </span>
+            </ng-container>
+            <ng-template #noCompletada>
+              <span class="material-symbols-outlined">
+                priority_high
+              </span>
+            </ng-template>
+          </th>
           <td><button class="button is-link" (click)="tareaCompletar(i)">Completar</button></td>
           <td><button class="button is-danger" (click)="tareaDelete(i)">Eliminar</button></td>
         </tr>

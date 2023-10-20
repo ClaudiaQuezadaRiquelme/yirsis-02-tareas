@@ -26,7 +26,7 @@
             </ng-template>
           </th>
           <td><button class="button is-link" (click)="tareaCompletar(i)">Completar</button></td>
-          <td><button class="button is-danger" (click)="tareaDelete(i)">Eliminar</button></td>
+          <td><button class="button is-danger" (click)="tareaDelete(i)" [disabled]="elem.completada">Eliminar</button></td>
         </tr>
       </tbody>
     </table>

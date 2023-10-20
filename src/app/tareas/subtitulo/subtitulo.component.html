@@ -15,13 +15,13 @@
     </ng-template>
     <!-- <p>Tareas en total: <span>{{tareasLength}}</span></p> -->
 
-    <ng-container *ngIf="pendientes === tareasLength; else pendientesProgress">
+    <ng-container *ngIf="pendientes === tareasLength && pendientes !== 0; else pendientesProgress">
         <div class="notification is-danger">
             Tareas pendientes: <span>{{pendientes}}</span>
         </div>
     </ng-container>
     <ng-template #pendientesProgress>
-        <ng-container *ngIf="pendientes != 0; else pendientesCero">
+        <ng-container *ngIf="pendientes !== 0; else pendientesCero">
             <div class="notification is-warning">
                 Tareas pendientes: <span>{{pendientes}}</span>
             </div>
@@ -46,7 +46,7 @@
     </ng-template>
     <!-- <p>Tareas completadas: <span>{{completadas}}</span></p> -->
 
-    <ng-container *ngIf="pendientes === 0">
+    <ng-container *ngIf="pendientes === 0 && completadas !== 0">
         <hr>
         <h1 class="title">
             ¡¡¡Papas fritas adquiridas!!!<br>

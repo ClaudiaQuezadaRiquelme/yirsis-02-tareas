@@ -29,4 +29,22 @@ export class TareasService {
     completar(index: number): void {
         this.tareas[index].completada = true;
     }
+
+    getCompletadas(): number {
+        let completadas: number = 0;
+        for (let i = 0; i < this.tareas.length; i++) {
+            const elem = this.tareas[i];
+            if (elem.completada) completadas++;
+        }
+        return completadas;
+    }
+
+    getPendientes(): number {
+        let pendientes: number = 0;
+        for (let i = 0; i < this.tareas.length; i++) {
+            const elem = this.tareas[i];
+            if (!elem.completada) pendientes++;
+        }
+        return pendientes;
+    }
 }

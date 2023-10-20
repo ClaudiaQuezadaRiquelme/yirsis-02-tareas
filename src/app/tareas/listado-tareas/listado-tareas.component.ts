@@ -15,4 +15,8 @@ export class ListadoTareasComponent {
   get tareas() {
     return this.tareasService.tareas;
   }
+
+  tareasDelete(value: string): void {
+    return this.tareasService.delete(value);
+  }
 }

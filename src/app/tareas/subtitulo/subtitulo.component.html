@@ -1,9 +1,51 @@
 <div>
     <h2 class="subtitle">Listado de tareas</h2>
     <p><strong>Adquiere tus papas fritas tras completar las tareas.</strong></p>
-    <p>Tareas en total: <span>{{tareasLength}}</span></p>
-    <p>Tareas pendientes: <span>{{pendientes}}</span></p>
-    <p>Tareas completadas: <span>{{completadas}}</span></p>
+    <br>
+
+    <ng-container *ngIf="tareasLength > 0; else tareasLengthCero">
+        <div class="notification is-primary is-light">
+            Tareas en total: <span>{{tareasLength}}</span>
+        </div>
+    </ng-container>
+    <ng-template #tareasLengthCero>
+        <div class="notification is-success">
+            Tareas en total: <span>{{tareasLength}}</span>
+        </div>
+    </ng-template>
+    <!-- <p>Tareas en total: <span>{{tareasLength}}</span></p> -->
+
+    <ng-container *ngIf="pendientes === tareasLength; else pendientesProgress">
+        <div class="notification is-danger">
+            Tareas pendientes: <span>{{pendientes}}</span>
+        </div>
+    </ng-container>
+    <ng-template #pendientesProgress>
+        <ng-container *ngIf="pendientes != 0; else pendientesCero">
+            <div class="notification is-warning">
+                Tareas pendientes: <span>{{pendientes}}</span>
+            </div>
+        </ng-container>
+        <ng-template #pendientesCero>
+            <div class="notification  is-success is-light">
+                Tareas pendientes: <span>{{pendientes}}</span>
+            </div>
+        </ng-template>
+    </ng-template>
+    <!-- <p>Tareas pendientes: <span>{{pendientes}}</span></p> -->
+
+    <ng-container *ngIf="completadas === tareasLength; else completadasProgress">
+        <div class="notification is-primary">
+            Tareas completadas: <span>{{completadas}}</span>
+        </div>
+    </ng-container>
+    <ng-template #completadasProgress>
+        <div class="notification is-link">
+            Tareas completadas: <span>{{completadas}}</span>
+        </div>
+    </ng-template>
+    <!-- <p>Tareas completadas: <span>{{completadas}}</span></p> -->
+
     <ng-container *ngIf="pendientes === 0">
         <hr>
         <h1 class="title">

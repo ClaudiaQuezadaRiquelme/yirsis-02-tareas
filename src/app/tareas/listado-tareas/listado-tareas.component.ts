@@ -7,11 +7,12 @@ import { TareasService } from '../services/tareas.service';
   styleUrls: ['./listado-tareas.component.css']
 })
 export class ListadoTareasComponent {
-  tareas: string[] = [];
 
   constructor(
     private tareasService: TareasService,
-  ) {
-    this.tareas = tareasService.tareas;
+  ) {}
+
+  get tareas() {
+    return this.tareasService.tareas;
   }
 }

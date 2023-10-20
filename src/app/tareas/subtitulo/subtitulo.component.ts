@@ -12,13 +12,13 @@ export class SubtituloComponent {
     private tareasService: TareasService,
   ) {}
 
-  get tareasLength() {
+  get tareasLength(): number {
     return this.tareasService.tareas.length;
   }
-  get completadas() {
+  get completadas(): number {
     return this.tareasService.getCompletadas();
   }
-  get pendientes() {
+  get pendientes(): number {
     return this.tareasService.getPendientes();
   }
 }

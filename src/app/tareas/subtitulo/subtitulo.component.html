@@ -1,7 +1,16 @@
 <div>
     <h2 class="subtitle">Listado de tareas</h2>
-    <p>Adquiere tus papas fritas tras completar las tareas.</p>
+    <p><strong>Adquiere tus papas fritas tras completar las tareas.</strong></p>
     <p>Tareas en total: <span>{{tareasLength}}</span></p>
     <p>Tareas pendientes: <span>{{pendientes}}</span></p>
     <p>Tareas completadas: <span>{{completadas}}</span></p>
+    <ng-container *ngIf="pendientes === 0">
+        <hr>
+        <h1 class="title">
+            ¡¡¡Papas fritas adquiridas!!!<br>
+            <span class="material-symbols-outlined">
+                sentiment_very_satisfied
+            </span>
+        </h1>
+    </ng-container>
 </div>

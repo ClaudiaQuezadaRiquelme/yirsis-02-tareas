@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TareasService } from '../services/tareas.service';
+import { Tarea } from '../interfaces/tarea.interface';
 
 @Component({
   selector: 'app-listado-tareas',
@@ -12,11 +13,14 @@ export class ListadoTareasComponent {
     private tareasService: TareasService,
   ) {}
 
-  get tareas() {
+  get tareas(): Tarea[] {
     return this.tareasService.tareas;
   }
 
-  tareasDelete(index: number): void {
+  tareaDelete(index: number): void {
     return this.tareasService.delete(index);
+  }
+  tareaCompletar(index: number): void {
+    return this.tareasService.completar(index);
   }
 }

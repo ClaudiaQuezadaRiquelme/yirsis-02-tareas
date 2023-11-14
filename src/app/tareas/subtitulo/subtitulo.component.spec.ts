@@ -29,4 +29,12 @@ describe('SubtituloComponent', () => {
     const tareas = render.querySelector('#totalTareas')?.textContent?.trim();
     expect(tareas).toEqual('Tareas en total: 4');
   });
+
+  it('Debería disminuir en 1 si elimino un elemento.', ()=> {
+    service.delete(1);
+    fixture.detectChanges();
+    const render: HTMLElement = fixture.nativeElement;
+    const tareas = render.querySelector('#totalTareas')?.textContent?.trim();
+    expect(tareas).toEqual('Tareas en total: 3');
+  });
 });

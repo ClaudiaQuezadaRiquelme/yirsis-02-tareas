@@ -37,4 +37,16 @@ describe('SubtituloComponent', () => {
     const tareas = render.querySelector('#totalTareas')?.textContent?.trim();
     expect(tareas).toEqual('Tareas en total: 3');
   });
+
+  it('Debería renderizar el mensaje ¡¡¡Papas fritas adquiridas!!!', ()=> {
+    for (let i = 0; i < service.tareas.length; i++) {
+        service.completar(i);
+    }
+    fixture.detectChanges();
+    const render: HTMLElement = fixture.nativeElement;
+    const tareas = render.querySelector('#noHayPendientes')?.textContent?.trim();
+    console.log('tareas html: ',tareas);
+    // expect(tareas).toEqual('¡¡¡Papas fritas adquiridas!!! sentiment_very_satisfied');
+    expect(tareas).toContain('¡¡¡Papas fritas adquiridas!!!');
+  });
 });

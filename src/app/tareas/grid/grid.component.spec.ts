@@ -19,4 +19,11 @@ describe('GridComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Debería renderizar un HTMLElement clase columns', ()=> {
+    const render: HTMLElement = fixture.nativeElement;
+    const columns = render.querySelector('.columns');
+    console.log('columns html: ',columns);
+    expect(columns).toBeTruthy();
+  });
 });

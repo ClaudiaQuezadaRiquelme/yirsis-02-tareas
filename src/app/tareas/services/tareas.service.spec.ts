@@ -20,4 +20,10 @@ describe('TareasService', () => {
         service.delete(10);
         expect(service.tareas.length).toBe(4);
     });
+
+    it('Spy: debería llamar a la función "completar" una sola vez.', ()=> {
+        const spy = jasmine.createSpyObj('TareasService', ['getCompletadas']);  // permite probar una fc que venga de un objeto y permite trabajarlo como objeto de JS
+        spy.getCompletadas();
+        expect(spy.getCompletadas.calls.count()).toBe(1);
+    });
 });

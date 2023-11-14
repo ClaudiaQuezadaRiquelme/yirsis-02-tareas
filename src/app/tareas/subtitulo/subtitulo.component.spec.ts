@@ -23,4 +23,10 @@ describe('SubtituloComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Debería renderizar mi prueba 4 elementos.', ()=> {
+    const render: HTMLElement = fixture.nativeElement;
+    const tareas = render.querySelector('#totalTareas')?.textContent?.trim();
+    expect(tareas).toEqual('Tareas en total: 4');
+  });
 });

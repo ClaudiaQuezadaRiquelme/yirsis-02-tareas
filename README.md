@@ -11,7 +11,7 @@ This project comes from [Angular desde cero](https://www.udemy.com/course/angula
 ## You can find in this project:
 
 - [Bulma CSS](bulma.io)
-- Google Fonts Material Symbols
+- [Google Fonts Material Symbols](https://fonts.google.com/icons)
 - ngFor, ngIf, ngClass
 - modules, services
 - getters
